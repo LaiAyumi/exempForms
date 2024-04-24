@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+    <html lang="pt-br">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <head>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #2c3e50;
+                color: #fff;
+                display: flex;
+                justify-content: center;
+                align-items: center; 
+                height: 100vh; 
+            }
+            h1 {
+                text-align: center;
+                margin-top: 30px;
+            }
+            #form-container {
+                max-width: 500px; 
+                background-color: #34495e;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+                z-index: 2;
+            }
+            form {
+                margin: 0 auto;
+            }
+            label {
+                display: block;
+                margin-bottom: 5px;
+            }
+            input[type="text"],
+            input[type="email"],
+            input[type="password"],
+            input[type="date"],
+            select {
+                width: calc(100% - 22px);
+                padding: 8px;
+                margin-bottom: 10px;
+                border: 1px solid #555;
+                border-radius: 4px;
+                background-color: #444;
+                color: #fff;
+            }
+            button[type="submit"] {
+                width: 100%;
+                background: #c5b0ff;
+                color: rgb(0, 0, 0);
+                padding: 10px 15px;
+                margin-top: 10px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 16px;
+                font-weight: bold; 
+                transition: background-color 0.3s ease;
+            }
+            button[type="submit"]:hover {
+                background: #f3b4f5;
+            }
+            #background-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #ff0000, #ff00bf, #00c3ff, #0018a1);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            border-radius: 8px;
+            z-index: 1; /* Para garantir que o background fique atrás do formulário */
+        }
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        #background-container:hover {
+            filter: brightness(150%);
+        }
+        </style>
+    </head>
+    <body>
+        <div id="background-container"></div>
+        <div id="form-container">
+            <h1>Cadastro de Usuário</h1>
+            <form action="#" method="post">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" required>
+                <label for="confirmar-senha">Confirmar Senha:</label>
+                <input type="password" id="confirmar-senha" name="confirmar-senha" required>
+                <label for="genero">Gênero:</label>
+                <select id="genero" name="genero" required>
+                    <option value="" disabled selected>Selecione...</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Feminino">Feminino</option>
+                    <option value="Outro">Outro</option>
+                </select>
+                <label for="data-nascimento">Data de Nascimento:</label>
+                <input type="date" id="data-nascimento" name="data-nascimento" required>
+                <label for="cidade">Cidade:</label>
+                <input type="text" id="cidade" name="cidade">
+                <label for="pais">País:</label>
+                <input type="text" id="pais" name="pais">
+                <button type="submit">Cadastrar</button>
+            </form>
+        </div>
+</body>
+</html>
